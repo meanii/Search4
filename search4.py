@@ -2,7 +2,6 @@
 from datetime import datetime
 
 import argparse
-import os
 import requests
 
 startTime = datetime.now()
@@ -37,7 +36,7 @@ def banner():
 """ + Color.END)
 
 
-os.system("clear")
+# os.system("clear")
 banner()
 
 parser = argparse.ArgumentParser(description='Search user on different sites.')
