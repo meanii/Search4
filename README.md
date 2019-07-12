@@ -70,15 +70,15 @@ chmod +x search4.py
 ```
 We had planned to automate the following & add a feature,  but it seems not possible for now. [See issues#5](https://github.com/7rillionaire/Search4/issues/5)
 
-But then alias can be useful.
+But then [alias](https://www.geeksforgeeks.org/alias-command-in-linux-with-examples/amp/) can be useful.
 
 ```
 mv search4.py $HOME
 
-alias search4='pyhon3 search 4.py'
+alias search4='python3 search 4.py'
 
 ```
-Always make sure while using search4 you are in $HOME
+[Always make sure while using search4 you are in $HOME](https://github.com/7rillionaire/Search4/issues/5)
 
 
 #### Installation & Setup done...!
