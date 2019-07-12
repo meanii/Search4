@@ -90,6 +90,7 @@ result("https://www.instagram.com/", "Instagram", username+"/")
 result("https://flickr.com/photos/", "Flickr", username.lower())
 result("https://", "Tumblr", username.lower()+".tumblr.com")
 result("https://imgur.com/user/","Imgur",username)
+result("https://vsco.co/", "VSCO", username+'/images/1')
 
 print(color.BOLD + color.RED + "\n:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::\n\n" +color.END)
 
