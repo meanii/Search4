@@ -118,7 +118,7 @@ print(color.BOLD + color.RED + "\n::::::::::::::::::::::::::::::::::::::::::::::
 print(color.BOLD + color.WHITE + color.UNDER + "Others:\n" + color.END)
 result("https://www.wikipedia.org/wiki/User:","Wikipedia",username)
 result("https://buzzfeed.com/","Buzzfeed",username)
-result("https://open.spotify.com/user/{}","Spotify",username)
+result("https://open.spotify.com/user/","Spotify",username)
 result("https://soundcloud.com/","SoundCloud",username)
 result("https://www.crunchyroll.com/user/","Crunchyroll",username)
 
