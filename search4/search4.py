@@ -2,36 +2,18 @@
 from datetime import datetime
 
 import argparse
-import requests
 import colorama
 from colorama import Style
 from colorama import Fore as Color
 
-colorama.init()
+from search4.utils import banner, result
+
 
 def main():
+    colorama.init()
+
     start_time = datetime.now()
-    requests.packages.urllib3.disable_warnings()
 
-    def banner():
-        print(
-            Style.BRIGHT
-            + Color.MAGENTA
-            + """
-            
-
-          _/_/_/                                          _/        _/  _/
-       _/          _/_/      _/_/_/  _/  _/_/    _/_/_/  _/_/_/    _/  _/
-        _/_/    _/_/_/_/  _/    _/  _/_/      _/        _/    _/  _/_/_/_/
-           _/  _/        _/    _/  _/        _/        _/    _/      _/
-    _/_/_/      _/_/_/    _/_/_/  _/          _/_/_/  _/    _/      _/
-
-
-        > version 1.0
-        > Script to find user account on various platforms.
-""" + Style.RESET_ALL)
-
-    # os.system("clear")
     banner()
 
     parser = argparse.ArgumentParser(description="Search user on different sites.")
@@ -45,44 +27,13 @@ def main():
             Style.BRIGHT
             + Color.BLUE
             + "Given username is {}\n\n".format(
-                Color.RED + Color.UNDER + username + Style.RESET_ALL
+                Color.RED + username + Style.RESET_ALL
             )
-            + Color.END
+            + Style.RESET_ALL
         )
     else:
         print(Color.BLUE + "usage : search4 -u username" + Style.RESET_ALL)
         quit()
-
-    def result(url, site, username_):
-        address = url + username_
-        try:
-            headers = {
-                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:62.0) Gecko/20100101 Firefox/62.0"
-            }
-            r = requests.get(
-                address, headers=headers, verify=False, allow_redirects=False
-            )
-            if r.status_code == 200:
-                print(
-                    Style.BRIGHT
-                    + Color.YELLOW
-                    + "> {}: Account found on {}\n".format(site, address)
-                    + Style.RESET_ALL
-                )
-            else:
-                print(
-                    Style.BRIGHT
-                    + Color.GREEN
-                    + "[!] {} : Account not found on {}\n".format(site, address)
-                    + Style.RESET_ALL
-                )
-        except requests.RequestException:
-            print(
-                Style.BRIGHT
-                + Color.GREEN
-                + "[!] {} : Account not found on {}\n".format(site, address)
-                + Style.RESET_ALL
-            )
 
     print(
         Style.BRIGHT
@@ -91,7 +42,8 @@ def main():
         + Style.RESET_ALL
     )
 
-    print(Style.BRIGHT + Color.WHITE + Color.UNDER + "\n\nSocial sites:\n" + Style.RESET_ALL)
+    print(Style.BRIGHT + Color.WHITE + "\n\nSocial sites:\n" + Style.RESET_ALL)
+
     # noinspection PyUnboundLocalVariable
     result("https://www.facebook.com/", "facebook", username)
     result("https://twitter.com/", "Twitter", username)
@@ -101,7 +53,7 @@ def main():
 
     print(Style.BRIGHT + Color.RED + "\n" + ":" * 75 + "\n\n" + Style.RESET_ALL)
 
-    print(Style.BRIGHT + Color.WHITE + Color.UNDER + "Video platforms:\n" + Style.RESET_ALL)
+    print(Style.BRIGHT + Color.WHITE + "Video platforms:\n" + Style.RESET_ALL)
     result("https://www.youtube.com/c/", "YouTube", username)
     result("https://vimeo.com/", "Vimeo", username)
     result("https://www.dailymotion.com/", "Dailymotion", username)
@@ -110,7 +62,7 @@ def main():
 
     print(Style.BRIGHT + Color.RED + "\n" + ":" * 75 + "\n\n" + Style.RESET_ALL)
 
-    print(Style.BRIGHT + Color.WHITE + Color.UNDER + "Photo platforms:\n" + Style.RESET_ALL)
+    print(Style.BRIGHT + Color.WHITE + "Photo platforms:\n" + Style.RESET_ALL)
     result("https://www.instagram.com/", "Instagram", username + "/")
     # result("https://www.pinterest.com/", "Pinterest", username)
     result("https://flickr.com/photos/", "Flickr", username.lower())
@@ -120,7 +72,7 @@ def main():
 
     print(Style.BRIGHT + Color.RED + "\n" + ":" * 75 + "\n\n" + Style.RESET_ALL)
 
-    print(Style.BRIGHT + Color.WHITE + Color.UNDER + "Blogs and forums:\n" + Style.RESET_ALL)
+    print(Style.BRIGHT + Color.WHITE + "Blogs and forums:\n" + Style.RESET_ALL)
     result("https://", "Blogger", username + ".blogspot.com")
     result("https://medium.com/@", "Medium", username)
     result("https://myspace.com/", "Myspace", username.lower())
@@ -130,7 +82,7 @@ def main():
     print(Style.BRIGHT + Color.RED + "\n" + ":" * 75 + "\n\n" + Style.RESET_ALL)
 
     print(
-        Style.BRIGHT + Color.WHITE + Color.UNDER + "Professional platform:\n" + Style.RESET_ALL
+        Style.BRIGHT + Color.WHITE + "Professional platform:\n" + Style.RESET_ALL
     )
     result("https://github.com/", "Github", username)
     result("https://sourceforge.net/u/", "Sourceforge", username)
@@ -144,7 +96,7 @@ def main():
 
     print(Style.BRIGHT + Color.RED + "\n" + ":" * 75 + "\n\n" + Style.RESET_ALL)
 
-    print(Style.BRIGHT + Color.WHITE + Color.UNDER + "Others:\n" + Style.RESET_ALL)
+    print(Style.BRIGHT + Color.WHITE + "Others:\n" + Style.RESET_ALL)
     result("https://www.wikipedia.org/wiki/User:", "Wikipedia", username)
     result("https://buzzfeed.com/", "Buzzfeed", username)
     result("https://open.spotify.com/user/", "Spotify", username)
@@ -158,6 +110,6 @@ def main():
         Style.BRIGHT
         + Color.BLUE
         + "\n\nExecution Time : {}\n".format(completetime)
-        + Color.END
+        + Style.RESET_ALL
     )
     print(Style.BRIGHT + Color.WHITE + "DONE...! \n" + Style.RESET_ALL)
