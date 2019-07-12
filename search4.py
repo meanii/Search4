@@ -98,7 +98,7 @@ print(color.BOLD + color.WHITE + color.UNDER + "Blogs and forums:\n" + color.END
 result("https://","Blogger",username+".blogspot.com")
 result("https://medium.com/@", "Medium", username)
 result("https://myspace.com/", "Myspace", username.lower())
-result("https://www.reddit.com/r/", "Reddit", username)
+result("https://www.reddit.com/user/", "Reddit", username)
 result("https://www.quora.com/profile/", "Quora", username)
 
 print(color.BOLD + color.RED + "\n:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::\n\n" +color.END)
