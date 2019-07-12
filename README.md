@@ -1,4 +1,4 @@
-# Search4
+
 A tool to search a particular username on almost every social platform and tell , whether the user with that username exists on that site or not.
 <p align="center">
 <a href="https://github.com/7rillionaire/Search4">
@@ -9,8 +9,10 @@ A tool to search a particular username on almost every social platform and tell 
 <div align="center">
 
   [![Status](https://img.shields.io/badge/status-active-success.svg)]()
-  [![GitHub Issues](https://img.shields.io/github/issues/7rillionaire/Search4.svg)](https://github.com/7rillionaire/Search4/issues)
-  [![GitHub Forks](https://img.shields.io/github/forks/7rillionaire/Search4.svg)](https://github.com/7rillionaire/Search4/network/members)
+  <img src="https://img.shields.io/badge/version-1.0-blue.svg">
+  <img src="https://img.shields.io/badge/python->=_3.6-green.svg">
+  ![GitHub issues](https://img.shields.io/github/issues-raw/7rillionaire/Search4.svg)
+  ![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/7rillionaire/Search4.svg)
   [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 
 </div>
@@ -26,9 +28,9 @@ A tool to search a particular username on almost every social platform and tell 
 - [About](#about)
 - [Getting Started](#getting_started)
 - [Prerequisites](#prerequisites)
-- [Installing](#installing )
+- [Setting-up](#setup)
 - [Usage](#usage)
-- [TODO](../TODO.md)
+- [TODO](https://github.com/7rillionaire/Search4/blob/master/TODO.md)
 - [Acknowledgments](#acknowledgement)
 
 ## 🧐 About <a name = "about"></a>
@@ -48,39 +50,46 @@ Things needed to run search4.
 
 Installing dependencies
 
-```
-# Install python(3) first, then
+- [Install python3 as per your distro.](https://realpython.com/installing-python)
 
-pip install requests
+- Now install request module
 
-# if getting any conflicts, then
-
+<code>
 pip3 install requests
+</code>
 
-```
-
-### Installing <a name="installing"></a>
+### Setting-up <a name="setup"></a>
 
 ```
 git clone https://github.com/7rillionaire/Search4
 
 cd Search4
 
-chmod 777 setup.sh
+chmod +x search4.py
 
-./setup.sh
+```
+We had planned to automate the following & add a feature,  but it seems not possible for now. [See issues#5](https://github.com/7rillionaire/Search4/issues/5)
 
-``` 
+But then alias can be useful.
 
-Installation & Setup done...!
+```
+mv search4.py $HOME
+
+alias search4='pyhon3 search 4.py'
+
+```
+Always make sure while using search4 you are in $HOME
+
+
+#### Installation & Setup done...!
 
 
 ## 🎈 Usage <a name="usage"></a>
 
 
-```
-# make sure you are in $HOME
+Make sure you are in $HOME
 
+```
 search4 -u username
 
 # output
