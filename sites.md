@@ -64,6 +64,6 @@
 
 Actually there are many sites which doesn't use responses instead use error messages. 
 
-So making a list of them won't make sense untill the [feature]( https:/github.com/7rillionaire/Search4/blob/master/TODO.md) is added?
+So making a list of them won't make sense untill the [feature](https://github.com/7rillionaire/Search4/blob/master/TODO.md) is added? Which is W.I.P
 
 But soon after the feature is added [this](#need) part will be merged in to [Supported sites](#supported).
