@@ -28,7 +28,6 @@ A tool to search a particular username on almost every social platform and tell 
 - [About](#about)
 - [Getting Started](#getting_started)
 - [Prerequisites](#prerequisites)
-- [Setting-up](#setup)
 - [Usage](#usage)
 - [TODO](https://github.com/7rillionaire/Search4/blob/master/TODO.md)
 - [Acknowledgments](#acknowledgement)
@@ -43,42 +42,22 @@ This script works on the response of web servers and searches that username on t
 These instructions will get you a copy of the project up and running on your local machine for development and usage purposes.
 
 ### Prerequisites <a name="prerequisites"></a>
-Things needed to run search4.
-
-- python3
-- request module
-
-Installing dependencies
+Installing search4
 
 - [Install python3 as per your distro.](https://realpython.com/installing-python)
 
-- Now install request module
-
-<code>
-pip3 install requests
-</code>
-
-### Setting-up <a name="setup"></a>
+- Now you can install search4 using git:
 
 ```
-git clone https://github.com/7rillionaire/Search4
-
-cd Search4
-
-chmod +x search4.py
-
+pip install git+https://github.com/7rillionaire/Search4
 ```
-We had planned to automate the following & add a feature,  but it seems not possible for now. [See issues#5](https://github.com/7rillionaire/Search4/issues/5)
 
-But then [alias](https://www.geeksforgeeks.org/alias-command-in-linux-with-examples/amp/) can be useful.
-
+Or, if you already downloaded search4, you can install it directly from the directory:
 ```
-mv search4.py $HOME
-
-alias search4='python3 search 4.py'
-
+pip install .
 ```
-[Always make sure while using search4 you are in $HOME](https://github.com/7rillionaire/Search4/issues/5)
+
+You can use the `-e` flag to install the project in editable mode (i.e. setuptools "develop mode") from a local project path or a VCS url.
 
 
 #### Installation & Setup done...!
