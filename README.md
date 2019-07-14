@@ -65,9 +65,6 @@ You can use the `-e` flag to install the project in editable mode (i.e. setuptoo
 
 ## 🎈 Usage <a name="usage"></a>
 
-
-Make sure you are in $HOME
-
 ```
 search4 -u username
 
