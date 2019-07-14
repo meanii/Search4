@@ -1,5 +1,5 @@
 
-A tool to search a particular username on almost every social platform and tell , whether the user with that username exists on that site or not.
+A tool to search a particular username on almost every social platform and tell, whether the user with that username exists on that site or not.
 <p align="center">
 <a href="https://github.com/7rillionaire/Search4">
 <img src="https://i.ibb.co/TWvY84p/Pics-Art-12-01-03-29-17-1.png" alt="logo"></a>
