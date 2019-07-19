@@ -9,7 +9,7 @@ def result(address, site):
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:62.0) Gecko/20100101 Firefox/62.0"
         }
         r = requests.get(
-            address, headers=headers, allow_redirects=False, timeout=1.0
+            address, headers=headers, allow_redirects=False,
         )
         if r.status_code == 200:
             print(
