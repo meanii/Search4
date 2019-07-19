@@ -8,6 +8,7 @@ from threading import Thread
 from yaml import safe_load
 from jinja2 import Template
 from sys import exit
+from os.path import realpath
 from search4.utils import banner, result
 
 
@@ -17,7 +18,7 @@ def run_thread(url, site, user_name):
 
 
 def main():
-    with open('search4/search4.yml') as yaml_in:
+    with open(realpath(__file__)[:-10] + 'search4.yml') as yaml_in:
         try:
             link_data = safe_load(yaml_in)
         except Exception as e:
