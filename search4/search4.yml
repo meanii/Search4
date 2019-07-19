@@ -7,7 +7,7 @@ social:
   MyAnimeList: https://myanimelist.net/profile/{{ username }}
 video:
   YouTube: https://www.youtube.com/c/{{ username }}
-  Vimeo: https://vimeo.com/{{ username }} Vimeo
+  Vimeo: https://vimeo.com/{{ username }}
   Dailymotion: https://www.dailymotion.com/{{ username }}
   Twitch: https://m.twitch.tv/{{ username }}
   steam: https://steamcommunity.com/id/{{ username }}
