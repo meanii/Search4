@@ -28,7 +28,8 @@ def main():
     start_time = datetime.now()
     banner()
     parser = ArgumentParser(description="Search user on different sites.")
-    parser.add_argument("-u", "--username", help="Search for the given username.")
+    parser.add_argument(
+        "-u", "--username", help="Search for the given username.")
     args = parser.parse_args()
     if args.username:
         print(
@@ -47,11 +48,14 @@ def main():
         Style.BRIGHT
         + Color.RED
         + delim
-        + Style.RESET_ALL
-    )
+        + Style.RESET_ALL)
 
     for group, data in link_data.items():
-        print(Style.BRIGHT + Color.WHITE + "\n\n%s sites:\n" % group + Style.RESET_ALL)
+        print(
+            Style.BRIGHT
+            + Color.WHITE
+            + "\n\n%s sites:\n" % group
+            + Style.RESET_ALL)
         threads = []
         for site, url in data.items():
             t = Thread(target=run_thread, args=[url, site, args.username])
@@ -59,7 +63,11 @@ def main():
             threads.append(t)
         for th in threads:
             th.join()
-        print(Style.BRIGHT + Color.RED + "\n" + ":" * 75 + "\n\n" + Style.RESET_ALL)
+        print(
+            Style.BRIGHT
+            + Color.RED
+            + "\n" + ":" * 75
+            + "\n\n" + Style.RESET_ALL)
 
     completetime = datetime.now() - start_time
     print(
