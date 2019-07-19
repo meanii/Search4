@@ -3,8 +3,7 @@ from colorama import Style
 from colorama import Fore as Color
 
 
-def result(url, site, username_):
-    address = url + username_
+def result(address, site):
     try:
         headers = {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:62.0) Gecko/20100101 Firefox/62.0"
@@ -33,6 +32,7 @@ def result(url, site, username_):
             + "[!] {} : Account not found on {}\n".format(site, address)
             + Style.RESET_ALL
         )
+
 
 def banner():
     print(

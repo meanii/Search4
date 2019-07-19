@@ -9,5 +9,6 @@ setup(
     author="7rillionaire",
     description="A tool to search a particular username on almost every social platform and tell,"
     " whether the user with that username exists on that site or not.",
-    entry_points={"console_scripts": ["search4=search4.search4:main"]}, install_requires=['requests', 'colorama']
+    entry_points={"console_scripts": ["search4=search4.search4:main"]},
+    install_requires=['requests', 'colorama', 'pyyaml', 'jinja2']
 )

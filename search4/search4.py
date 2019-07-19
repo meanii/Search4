@@ -1,109 +1,64 @@
 #!/usr/bin/env python3
-from datetime import datetime
-
-import argparse
 import colorama
+from argparse import ArgumentParser
+from datetime import datetime
 from colorama import Style
 from colorama import Fore as Color
-
+from threading import Thread
+from yaml import safe_load
+from jinja2 import Template
+from sys import exit
 from search4.utils import banner, result
 
 
+def run_thread(url, site, user_name):
+    temp = Template(url)
+    result(temp.render(username=user_name), site)
+
+
 def main():
+    with open('search4/search4.yml') as yaml_in:
+        try:
+            link_data = safe_load(yaml_in)
+        except Exception as e:
+            print(type(e).__name__, e)
+            exit(1)
     colorama.init()
-
     start_time = datetime.now()
-
     banner()
-
-    parser = argparse.ArgumentParser(description="Search user on different sites.")
+    parser = ArgumentParser(description="Search user on different sites.")
     parser.add_argument("-u", "--username", help="Search for the given username.")
-
     args = parser.parse_args()
-
     if args.username:
-        username = args.username
         print(
             Style.BRIGHT
             + Color.BLUE
             + "Given username is {}\n\n".format(
-                Color.RED + username + Style.RESET_ALL
+                Color.RED + args.username + Style.RESET_ALL
             )
             + Style.RESET_ALL
         )
     else:
         print(Color.BLUE + "usage : search4 -u username" + Style.RESET_ALL)
-        quit()
-
+        exit(1)
+    delim = ''.join(['_' for _ in range(80)])
     print(
         Style.BRIGHT
         + Color.RED
-        + "___________________________________________________________________________"
+        + delim
         + Style.RESET_ALL
     )
 
-    print(Style.BRIGHT + Color.WHITE + "\n\nSocial sites:\n" + Style.RESET_ALL)
-
-    # noinspection PyUnboundLocalVariable
-    result("https://www.facebook.com/", "facebook", username)
-    result("https://twitter.com/", "Twitter", username)
-    result("https://plus.google.com/+", "Google+", username.lower())
-    result("https://m.vk.com/", "VK", username)
-    result("https://myanimelist.net/profile/", "MyAnimeList", username)
-
-    print(Style.BRIGHT + Color.RED + "\n" + ":" * 75 + "\n\n" + Style.RESET_ALL)
-
-    print(Style.BRIGHT + Color.WHITE + "Video platforms:\n" + Style.RESET_ALL)
-    result("https://www.youtube.com/c/", "YouTube", username)
-    result("https://vimeo.com/", "Vimeo", username)
-    result("https://www.dailymotion.com/", "Dailymotion", username)
-    result("https://m.twitch.tv/", "Twitch", username)
-    result("https://steamcommunity.com/id/", "steam", username)
-
-    print(Style.BRIGHT + Color.RED + "\n" + ":" * 75 + "\n\n" + Style.RESET_ALL)
-
-    print(Style.BRIGHT + Color.WHITE + "Photo platforms:\n" + Style.RESET_ALL)
-    result("https://www.instagram.com/", "Instagram", username + "/")
-    # result("https://www.pinterest.com/", "Pinterest", username)
-    result("https://flickr.com/photos/", "Flickr", username.lower())
-    result("https://", "Tumblr", username.lower() + ".tumblr.com")
-    result("https://imgur.com/user/", "Imgur", username)
-    result("https://vsco.co/", "VSCO", username + "/images/1")
-
-    print(Style.BRIGHT + Color.RED + "\n" + ":" * 75 + "\n\n" + Style.RESET_ALL)
-
-    print(Style.BRIGHT + Color.WHITE + "Blogs and forums:\n" + Style.RESET_ALL)
-    result("https://", "Blogger", username + ".blogspot.com")
-    result("https://medium.com/@", "Medium", username)
-    result("https://myspace.com/", "Myspace", username.lower())
-    result("https://www.reddit.com/user/", "Reddit", username)
-    result("https://www.quora.com/profile/", "Quora", username)
-
-    print(Style.BRIGHT + Color.RED + "\n" + ":" * 75 + "\n\n" + Style.RESET_ALL)
-
-    print(
-        Style.BRIGHT + Color.WHITE + "Professional platform:\n" + Style.RESET_ALL
-    )
-    result("https://github.com/", "Github", username)
-    result("https://sourceforge.net/u/", "Sourceforge", username)
-    result("https://repl.it/@", "Repl.it", username)
-    result("https://", "Slack", username + ".slack.com")
-    result("https://codepen.io/", "CodePen", username)
-    result("https://hackerone.com/", "Hackerone", username.lower())
-    result("https://BugCrowd.com/", "BugCrowd", username)
-    result("https://about.me/", "about me ", username.lower())
-    result("https://www.patreon.com/", "Patreon", username)
-
-    print(Style.BRIGHT + Color.RED + "\n" + ":" * 75 + "\n\n" + Style.RESET_ALL)
-
-    print(Style.BRIGHT + Color.WHITE + "Others:\n" + Style.RESET_ALL)
-    result("https://www.wikipedia.org/wiki/User:", "Wikipedia", username)
-    result("https://buzzfeed.com/", "Buzzfeed", username)
-    result("https://open.spotify.com/user/", "Spotify", username)
-    result("https://soundcloud.com/", "SoundCloud", username)
-    result("https://www.crunchyroll.com/user/", "Crunchyroll", username)
-
-    print(Style.BRIGHT + Color.RED + "_" * 75 + Style.RESET_ALL)
+    for group, data in link_data.items():
+        print(Style.BRIGHT + Color.WHITE + "\n\n%s sites:\n" % group + Style.RESET_ALL)
+        threads = []
+        for site, url in data.items():
+            t = Thread(target=run_thread, args=[url, site, args.username])
+            t.start()
+            threads.append(t)
+        for th in threads:
+            th.join()
+        print(Style.BRIGHT + Color.RED + "\n" + ":" * 75 + "\n\n" + Style.RESET_ALL)
 
     completetime = datetime.now() - start_time
     print(
