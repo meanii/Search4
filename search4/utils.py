@@ -7,9 +7,7 @@ def result(address, site):
     try:
         agent = "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:62.0) "
         agent += "Gecko/20100101 Firefox/62.0"
-        headers = {
-            "User-Agent": agent
-        }
+        headers = {"User-Agent": agent}
         r = requests.get(
             address, headers=headers, allow_redirects=False,
         )

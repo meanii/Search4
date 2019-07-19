@@ -61,8 +61,7 @@ def main():
             t = Thread(target=run_thread, args=[url, site, args.username])
             t.start()
             threads.append(t)
-        for th in threads:
-            th.join()
+        [th.join() for th in threads]
         print(
             Style.BRIGHT
             + Color.RED
