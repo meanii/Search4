@@ -38,18 +38,15 @@ def main():
             + "Given username is {}\n\n".format(
                 Color.RED + args.username + Style.RESET_ALL
             )
-            + Style.RESET_ALL
-        )
+            + Style.RESET_ALL)
     else:
         print(Color.BLUE + "usage : search4 -u username" + Style.RESET_ALL)
         exit(1)
     delim = ''.join(['_' for _ in range(80)])
-    print(
-        Style.BRIGHT
-        + Color.RED
-        + delim
-        + Style.RESET_ALL)
+    print(Style.BRIGHT + Color.RED + delim + Style.RESET_ALL)
 
+    # read each group of links from YAML and give each
+    # link/request its own thread (join threads per each group)
     for group, data in link_data.items():
         print(
             Style.BRIGHT
@@ -73,6 +70,5 @@ def main():
         Style.BRIGHT
         + Color.BLUE
         + "\n\nExecution Time : {}\n".format(completetime)
-        + Style.RESET_ALL
-    )
+        + Style.RESET_ALL)
     print(Style.BRIGHT + Color.WHITE + "DONE...! \n" + Style.RESET_ALL)
