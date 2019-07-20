@@ -1,0 +1,42 @@
+---
+social:
+  facebook: https://www.facebook.com/{{ username }}
+  Twitter: https://twitter.com/{{ username }}
+  Google+: https://plus.google.com/+{{ username }}
+  VK: https://m.vk.com/{{ username }}
+  MyAnimeList: https://myanimelist.net/profile/{{ username }}
+video:
+  YouTube: https://www.youtube.com/c/{{ username }}
+  Vimeo: https://vimeo.com/{{ username }}
+  Dailymotion: https://www.dailymotion.com/{{ username }}
+  Twitch: https://m.twitch.tv/{{ username }}
+  steam: https://steamcommunity.com/id/{{ username }}
+photo:
+  Instagram: https://www.instagram.com/{{ username }}/
+  Flickr: https://flickr.com/photos/{{ username }}
+  Tumblr: https://{{ username }}.tumblr.com
+  Imgur: https://imgur.com/user/{{ username }}
+  VSCO: https://vsco.co/{{ username }}/images/1
+  # https://www.pinterest.com/{{ username }} Pinterest
+blog/forum:
+  Blogger: https://{{ username }}.blogspot.com
+  Medium: https://medium.com/@{{ username }}
+  Myspace: https://myspace.com/{{ username }}
+  Reddit: https://www.reddit.com/user/{{ username }}
+  Quora: https://www.quora.com/profile/{{ username }}
+professional:
+  Github: https://github.com/{{ username }}
+  Sourceforge: https://sourceforge.net/u/{{ username }}
+  "Repl.it": https://repl.it/@{{ username }}
+  Slack: https://{{ username }}.slack.com
+  CodePen: https://codepen.io/{{ username }}
+  Hackerone: https://hackerone.com/{{ username }}
+  BugCrowd: https://BugCrowd.com/{{ username }}
+  "about me": https://about.me/{{ username }}
+  Patreon: https://www.patreon.com/{{ username }}
+other:
+  Wikipedia: https://www.wikipedia.org/wiki/User:{{ username }}
+  Buzzfeed: https://buzzfeed.com/{{ username }}
+  Spotify: https://open.spotify.com/user/{{ username }}
+  Soundcloud: https://soundcloud.com/{{ username }}
+  Crunchyroll: https://www.crunchyroll.com/user/{{ username }}
