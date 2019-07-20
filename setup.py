@@ -4,6 +4,7 @@ setup(
     name="search4",
     version="1.0.0",
     packages=["search4"],
+    package_data={'search4': ['search4/*.yml']},
     url="https://github.com/7rillionaire/Search4",
     license="GPL-3.0",
     author="7rillionaire",
