@@ -34,7 +34,7 @@ def print_finish():
     print(Style.BRIGHT + Color.WHITE + "DONE...! \n" + Style.RESET_ALL)
 
 
-def print_banner():
+def print_separator():
     p = "\n" + ":" * 75 + "\n\n"
     print(Style.BRIGHT + Color.RED + p + Style.RESET_ALL)
 
@@ -54,25 +54,37 @@ def run_thread(url, site, user_name):
     result(temp.render(username=user_name), site)
 
 
-def main():
+def parse_yaml():
     try:
         with open(realpath(__file__)[:-10] + 'search4.yml') as yaml_in:
             link_data = safe_load(yaml_in)
     except Exception as e:
         print(type(e).__name__, e)
         exit(1)
-    colorama.init()
-    start_time = datetime.now()
-    banner()
+    else:
+        return link_data
+
+
+def parse_args():
     parser = ArgumentParser(description="Search user on different sites.")
     parser.add_argument(
         "-u", "--username", help="Search for the given username.")
     args = parser.parse_args()
     if args.username:
-        print_username(args.username)
-    else:
+        return args.username
+    return None
+
+
+def main():
+    link_data = parse_yaml()
+    colorama.init()
+    start_time = datetime.now()
+    banner()
+    user_name = parse_args()
+    if not user_name:
         print_usage()
         exit(1)
+    print_username(user_name)
     print_delimiter()
 
     # read each group of links from YAML and give each
@@ -81,11 +93,11 @@ def main():
         print_title(group)
         threads = []
         for site, url in data.items():
-            t = Thread(target=run_thread, args=[url, site, args.username])
+            t = Thread(target=run_thread, args=[url, site, user_name])
             t.start()
             threads.append(t)
         [th.join() for th in threads]
-        print_banner()
+        print_separator()
 
     complete_time = datetime.now() - start_time
     print_exec_time(complete_time)
