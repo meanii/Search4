@@ -87,8 +87,6 @@ def main():
     print_username(user_name)
     print_delimiter()
 
-    # read each group of links from YAML and give each
-    # link/request its own thread (join threads per each group)
     for group, data in link_data.items():
         print_title(group)
         threads = []
