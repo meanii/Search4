@@ -1,3 +1,0 @@
-[console_scripts]
-search4 = search4.search4:main
-
