@@ -42,16 +42,17 @@ def search_regex(regex, phrase):
     return None
 
 
-# Scrape more pages here to ensure 200 ok
-def check_200_ok(html, addr):
-    pattern = r"<title>(.*)</title>"
-    title_tag = search_regex(pattern, html)
+# Scrape more problem pages here to ensure 200 ok
+def check_200_ok(html, url):
     # check Steam
-    if 'steam' in addr:
+    title = r"<title>(.*)</title>"
+    if 'steam' in url:
+        title_tag = search_regex(title, html)
         if title_tag is not None and 'Error' in title_tag:
             return False
     # check pastebin
-    elif 'pastebin' in addr:
+    elif 'pastebin' in url:
+        title_tag = search_regex(title, html)
         if '#1 paste tool since 2002' in title_tag:
             return False
     return True
