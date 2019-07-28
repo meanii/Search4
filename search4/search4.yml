@@ -2,7 +2,6 @@
 social:
   facebook: https://www.facebook.com/{{ username }}
   Twitter: https://twitter.com/{{ username }}
-  Google+: https://plus.google.com/+{{ username }}
   VK: https://m.vk.com/{{ username }}
   MyAnimeList: https://myanimelist.net/profile/{{ username }}
   "Dev.to": https://dev.to/{{ username }}
