@@ -37,9 +37,9 @@ def banner():
 
 def search_regex(regex, phrase):
     match = search(regex, phrase)
-    if match:
-        return match.group(1)
-    return None
+    if not match:
+        return ''
+    return match.group(1)
 
 
 # Scrape more problem pages here to ensure 200 ok.
