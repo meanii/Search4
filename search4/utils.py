@@ -42,19 +42,20 @@ def search_regex(regex, phrase):
     return None
 
 
-# Scrape more problem pages here to ensure 200 ok
-def check_200_ok(html, url):
+# Scrape more problem pages here to ensure 200 ok.
+# Hopefully <title> tag contents can be used on
+# any future sites with issues.
+def check_200_ok(html, url, site_name):
+    if site_name not in ("steam", "pastebin"):
+        return True
+    regex_out = r"<title>(.*)</title>"
+    title_tag = search_regex(regex_out, html)
     # check Steam
-    title = r"<title>(.*)</title>"
-    if 'steam' in url:
-        title_tag = search_regex(title, html)
-        if title_tag is not None and 'Error' in title_tag:
-            return False
+    if 'steam' in url and 'Error' in title_tag:
+        return False
     # check pastebin
-    elif 'pastebin' in url:
-        title_tag = search_regex(title, html)
-        if '#1 paste tool since 2002' in title_tag:
-            return False
+    elif 'pastebin' in url and '#1 paste tool since 2002' in title_tag:
+        return False
     return True
 
 
@@ -67,7 +68,7 @@ def result(address, site):
         if r.status_code != 200:
             not_found(site, address)
         else:
-            if not check_200_ok(r.text, address):
+            if not check_200_ok(r.text, address, site.lower()):
                 not_found(site, address)
             else:
                 found(site, address)
