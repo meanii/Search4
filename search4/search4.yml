@@ -49,6 +49,6 @@ code:
   "Repl.it": https://repl.it/@{{ username }}
   Kaggke: https://www.kaggle.com/{{ username }}
   # Docker: https://hub.docker.com/u/{{ username }}/
-others:
+other:
   Wikipedia: https://www.wikipedia.org/wiki/User:{{ username }}
   Buzzfeed: https://buzzfeed.com/{{ username }}
