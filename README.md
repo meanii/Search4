@@ -4,7 +4,7 @@
 
 > An OSINT tool that helps you to find people on the internet. It's small and fast!
 </p>
-----
+
 
 ### Prerequisites
 
@@ -27,7 +27,7 @@ You can use the `-e` flag to install the project in editable mode (i.e. setuptoo
 
 #### Installation & Setup done...!
 
-## Demo
+### Demo
 
-<a herf="https://asciinema.org/a/372053">
+<a href="https://asciinema.org/a/372053">
 <img src="https://images-ext-1.discordapp.net/external/UZUevw1trvHKGWfssteo0mIohZYJt7xS9v2PW3kGgzM/https/asciinema.org/a/372053.png"></a>
