@@ -5,8 +5,9 @@
 > An OSINT tool that helps you to find people on the internet. It's small and fast!
 </p>
 
+<hr>
 
-### Prerequisites
+#### Prerequisites
 
 - [Install python3 as per your distro.](https://realpython.com/installing-python)
 
@@ -25,9 +26,13 @@ pip install .
 
 You can use the `-e` flag to install the project in editable mode (i.e. setuptools "develop mode") from a local project path or a VCS url.
 
-#### Installation & Setup done...!
+<hr>
 
-### Demo
+#### Demo
+
+```
+search4 -u username
+```
 
 <a href="https://asciinema.org/a/372053">
 <img src="https://images-ext-1.discordapp.net/external/UZUevw1trvHKGWfssteo0mIohZYJt7xS9v2PW3kGgzM/https/asciinema.org/a/372053.png"></a>
