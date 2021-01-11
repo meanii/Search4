@@ -13,40 +13,25 @@ from search4.utils import banner, result
 
 
 def print_exec_time(t):
-    ft = "\n\nExecution Time : {}\n".format(t)
-    print(Style.BRIGHT + Color.BLUE + ft + Style.RESET_ALL)
+    ft = "Execution Time : {}\n".format(t)
+    print(Color.BLUE + ft + Style.RESET_ALL)
 
 
 def print_username(user):
     print(
-        Style.BRIGHT
-        + Color.BLUE
-        + "Given username is {}\n\n".format(
-            Color.RED + user + Style.RESET_ALL)
+        Color.RED
+        + "> {}\n".format(
+            Color.BLUE + user + Style.RESET_ALL)
         + Style.RESET_ALL)
 
 
 def print_usage():
-    print(Color.BLUE + "usage : search4 -u username" + Style.RESET_ALL)
-
-
-def print_finish():
-    print(Style.BRIGHT + Color.WHITE + "DONE...! \n" + Style.RESET_ALL)
-
-
-def print_separator():
-    p = "\n" + ":" * 75 + "\n\n"
-    print(Style.BRIGHT + Color.RED + p + Style.RESET_ALL)
-
-
-def print_delimiter():
-    delim = ''.join(['_' for _ in range(80)])
-    print(Style.BRIGHT + Color.RED + delim + Style.RESET_ALL)
+    print(Color.BLUE + "usage : search4 -u username\n" + Style.RESET_ALL)
 
 
 def print_title(grp):
-    title = "\n\n%s sites:\n" % grp
-    print(Style.BRIGHT + Color.WHITE + title + Style.RESET_ALL)
+    title = "\n%s sites:\n" % grp
+    print(Color.WHITE + title + Style.RESET_ALL)
 
 
 def run_thread(url, site, user_name):
@@ -85,18 +70,14 @@ def main():
         print_usage()
         exit(1)
     print_username(user_name)
-    print_delimiter()
 
     for group, data in link_data.items():
-        print_title(group)
         threads = []
         for site, url in data.items():
             t = Thread(target=run_thread, args=[url, site, user_name])
             t.start()
             threads.append(t)
         [th.join() for th in threads]
-        print_separator()
 
     complete_time = datetime.now() - start_time
     print_exec_time(complete_time)
-    print_finish()

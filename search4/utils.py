@@ -5,31 +5,25 @@ from colorama import Fore as Color
 
 
 def found(name, addr):
-    msg = "> {}: Account found on {}\n".format(name, addr)
-    print(Style.BRIGHT + Color.YELLOW + msg + Style.RESET_ALL)
+    msg = "{}: {}\n".format(name, addr)
+    print(Color.GREEN + msg + Style.RESET_ALL)
 
 
 def not_found(name, addr):
-    msg = "[!] {} : Account not found on {}\n".format(name, addr)
-    print(Style.BRIGHT + Color.GREEN + msg + Style.RESET_ALL)
+    msg = "{}: Not found\n".format(name)
+    print(Color.WHITE + msg + Style.RESET_ALL)
 
 
 def banner():
     print(
         Style.BRIGHT
-        + Color.MAGENTA
-        + """
+        + Color.YELLOW
+        + """                                                           
+ ___                  _   _ _ 
+/ __| ___ __ _ _ _ __| |_| | | 
+\__ \/ -_) _` | '_/ _| ' \_ _| 
+|___/\___\__,_|_| \__|_||_||_| 
 
-
-          _/_/_/                                          _/        _/  _/
-       _/          _/_/      _/_/_/  _/  _/_/    _/_/_/  _/_/_/    _/  _/
-        _/_/    _/_/_/_/  _/    _/  _/_/      _/        _/    _/  _/_/_/_/
-           _/  _/        _/    _/  _/        _/        _/    _/      _/
-    _/_/_/      _/_/_/    _/_/_/  _/          _/_/_/  _/    _/      _/
-
-
-        > version 1.0
-        > Script to find user account on various platforms.
         """
         + Style.RESET_ALL
     )
@@ -42,9 +36,6 @@ def search_regex(regex, phrase):
     return match.group(1)
 
 
-# Scrape more problem pages here to ensure 200 ok.
-# Hopefully <title> tag contents can be used on
-# any future sites with issues.
 def check_200_ok(html, url, site_name):
     if site_name not in ("steam", "pastebin"):
         return True
