@@ -16,12 +16,12 @@ Installing search4
 - Now you can install search4 using git:
 
 ```
-pip install git+https://github.com/0xknown/Search4
+pip3 install git+https://github.com/0xknown/Search4
 ```
 
 Or, if you already downloaded search4, you can install it directly from the directory:
 ```
-pip install .
+pip3 install .
 ```
 
 You can use the `-e` flag to install the project in editable mode (i.e. setuptools "develop mode") from a local project path or a VCS url.
@@ -34,5 +34,5 @@ You can use the `-e` flag to install the project in editable mode (i.e. setuptoo
 search4 -u username
 ```
 
-<a href="https://asciinema.org/a/372053">
-<img src="https://images-ext-1.discordapp.net/external/UZUevw1trvHKGWfssteo0mIohZYJt7xS9v2PW3kGgzM/https/asciinema.org/a/372053.png"></a>
+<a href="https://asciinema.org/a/384004">
+<img src="https://media.discordapp.net/attachments/749199487854968843/798402820163239956/image0.png"></a>
