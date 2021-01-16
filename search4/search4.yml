@@ -1,19 +1,19 @@
 ---
 sites:
   "About Me": https://about.me/{{ username }}
-  # Bandcamp: https://www.bandcamp.com/{{ username }}
+  #Bandcamp: https://www.bandcamp.com/{{ username }}
   Blogger: https://{{ username }}.blogspot.com
-  BugCrowd: https://BugCrowd.com/{{ username }}
+  BugCrowd: https://bugcrowd.com/{{ username }}
   Buzzfeed: https://buzzfeed.com/{{ username }}
-  Canva: https://www.canva.com/{{ username }}
-  CodePen: https://codepen.io/{{ username }}
-  Crunchyroll: https://www.crunchyroll.com/user/{{ username }}
+  #Canva: https://www.canva.com/{{ username }}
+  #CodePen: https://codepen.io/{{ username }}
+  #Crunchyroll: https://www.crunchyroll.com/user/{{ username }}
   Dailymotion: https://www.dailymotion.com/{{ username }}
   "Dev.to": https://dev.to/{{ username }}
-  # Docker: https://hub.docker.com/u/{{ username }}/
+  #Docker: https://hub.docker.com/u/{{ username }}/
   FaceBook: https://www.facebook.com/{{ username }}
   Flickr: https://flickr.com/photos/{{ username }}
-  # Flipboard: https://flipboard.com/@{{ username }}
+  #Flipboard: https://flipboard.com/@{{ username }}
   Giphy: https://giphy.com/{{ username }}
   Github: https://github.com/{{ username }}
   GoodReads: https://www.goodreads.com/{{ username }}
@@ -27,8 +27,8 @@ sites:
   Scratch: https://scratch.mit.edu/users/{{ username }}
   Slack: https://{{ username }}.slack.com
   Spotify: https://open.spotify.com/user/{{ username }}   
-  Photobucket: https://photobucket.com/user/{{ username }}/library
-  # Pinterest: https://www.pinterest.com/{{ username }}
+  #Photobucket: https://photobucket.com/user/{{ username }}/library
+  #Pinterest: https://www.pinterest.com/{{ username }}
   Reddit: https://www.reddit.com/user/{{ username }}
   "Repl.it": https://repl.it/@{{ username }}
   Soundcloud: https://soundcloud.com/{{ username }}
@@ -37,7 +37,7 @@ sites:
   Patreon: https://www.patreon.com/{{ username }}
   Quora: https://www.quora.com/profile/{{ username }}
   Tumblr: https://{{ username }}.tumblr.com
-  Twitch: https://m.twitch.tv/{{ username }}
+  Twitch: https://twitch.tv/{{ username }}/profile
   Twitter: https://twitter.com/{{ username }}
   Unsplash: https://unsplash.com/@{{ username }}
   Wikipedia: https://www.wikipedia.org/wiki/User:{{ username }}
