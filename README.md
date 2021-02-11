@@ -16,7 +16,7 @@ Installing search4
 - Now you can install search4 using git:
 
 ```
-pip3 install git+https://github.com/0xknown/Search4
+pip3 install git+https://github.com/kisestu/Search4
 ```
 
 Or, if you already downloaded search4, you can install it directly from the directory:
