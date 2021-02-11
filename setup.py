@@ -8,7 +8,7 @@ setup(
     include_package_data = True,
     url="https://github.com/kisestu/Search4",
     license="GPL-3.0",
-    author="0xknown",
+    author="kisestu",
     description="Sweet OSINT tool to find people on the social media.",
     entry_points={"console_scripts": ["search4=search4.search4:main"]},
     install_requires=['requests', 'colorama', 'pyyaml', 'jinja2'],
