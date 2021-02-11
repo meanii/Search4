@@ -6,7 +6,7 @@ setup(
     packages=["search4"],
     package_data={'search4': ['search4/*.yml']},
     include_package_data = True,
-    url="https://github.com/0xknown/Search4",
+    url="https://github.com/kisestu/Search4",
     license="GPL-3.0",
     author="0xknown",
     description="Sweet OSINT tool to find people on the social media.",
