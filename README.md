@@ -1,5 +1,5 @@
 <p align="center">
-<a href="https://github.com/kisestu/Search4">
+<a href="https://github.com/meanii/Search4">
 <img src="https://media.discordapp.net/attachments/749199487854968843/775966094670037012/IMG_20200828_114636_438.jpg" alt="search4"></a>
 
 > An OSINT tool that helps you to find people on the internet. It's small and fast!
@@ -16,7 +16,7 @@ Installing search4
 - Now you can install search4 using git:
 
 ```
-pip3 install git+https://github.com/kisestu/Search4
+pip3 install git+https://github.com/meanii/Search4
 ```
 
 Or, if you already downloaded search4, you can install it directly from the directory:
