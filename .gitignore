@@ -2,6 +2,8 @@
 # Created by https://www.gitignore.io/api/linux,python,windows
 # Edit at https://www.gitignore.io/?templates=linux,python,windows
 
+dist
+*.lock
 ### Linux ###
 *~
 
